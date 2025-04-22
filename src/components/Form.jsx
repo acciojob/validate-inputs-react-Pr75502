@@ -86,7 +86,7 @@ const Form = () => {
                     onChange={handleChange}
 
                 />
-                {error.name && <p style={{color: "red"}}>{error.name}</p>}
+                {error.name && <p className='errorMessage' style={{color: "red"}}>{error.name}</p>}
                 <label>Address</label>
                 <input
                     type="text"
@@ -95,7 +95,7 @@ const Form = () => {
                     placeholder='Address'
                     onChange= { handleChange }
                 />
-                {error.address && <p style={{color: "red"}}>{error.address}</p>}
+                {error.address && <p className='errorMessage' style={{color: "red"}}>{error.address}</p>}
                 <label>Email</label>
                 <input
                     type="email"
@@ -104,7 +104,7 @@ const Form = () => {
                     placeholder='Email'
                     onChange= { handleChange }
                 />
-                {error.email && <p style={{color: "red"}}>{error.email}</p>}
+                {error.email && <p className='errorMessage' style={{color: "red"}}>{error.email}</p>}
                 <label>Mobile</label>
                 <input
                 type='tel'
@@ -113,7 +113,7 @@ const Form = () => {
                     placeholder='Mobile'
                     onChange={ handleChange }
                 />
-                {error.mobile && <p style={{color: "red"}}>{error.mobile}</p>}
+                {error.mobile && <p className='errorMessage' style={{color: "red"}}>{error.mobile}</p>}
                 <button type="submit">Submit</button>
            </form>
         </div>
