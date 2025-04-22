@@ -1,5 +1,5 @@
 
-import { set } from 'cypress/types/lodash';
+
 import React, { useState } from 'react';
 
 
@@ -42,7 +42,7 @@ const Form = () => {
             }
         }
         if (name == "mobile") {
-            if (value.length > 10) {
+            if (value.length != 10) {
                 error ="Mobile number should not be more than 10 characters"
             }
         }
@@ -63,6 +63,13 @@ const Form = () => {
             }
         })
         setError(newError)
+
+        setFormData({
+            name: "",
+            address: "",
+            email: "",
+            mobile: ""
+        })
 }
 
     return (
