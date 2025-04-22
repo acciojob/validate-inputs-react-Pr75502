@@ -18,11 +18,7 @@ const Form = () => {
             [name]: value
         })
         )
-        const newError = validate(name, value);
-        setError((prevError) => ({
-            ...prevError,
-            [name]: newError
-        }))
+      
     }
     const validate = (name, value) => { 
         let error = ""
@@ -49,29 +45,32 @@ const Form = () => {
         return error;
 
     }
-
     function handleSubmit(e) {
         e.preventDefault();
-        let valid=true
 
-        let newError = {}
+        let valid = true;
+        let newError = {};
+
         Object.entries(formData).forEach(([key, value]) => {
             const error = validate(key, value);
             if (error) {
                 newError[key] = error;
                 valid = false;
             }
-        })
-        setError(newError)
-        if (!valid) return; 
+        });
+
+        setError(newError);
+
+        if (!valid) return;
+
         setFormData({
             name: "",
             address: "",
             email: "",
             mobile: ""
-        })
-        
-}
+        });
+    }
+
 
     return (
         <div>
