@@ -63,13 +63,14 @@ const Form = () => {
             }
         })
         setError(newError)
-
+        if (!valid) return; 
         setFormData({
             name: "",
             address: "",
             email: "",
             mobile: ""
         })
+        
 }
 
     return (
